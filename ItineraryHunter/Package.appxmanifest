@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="39fe9467-f06e-4c0e-88da-112e61572543" Publisher="CN=patternsAndpractices" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>ItineraryHunter</DisplayName>
+    <PublisherDisplayName>Silverblade</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ItineraryHunter">
+      <VisualElements DisplayName="Itinerary Hunter" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Itinerary Hunter" ForegroundText="light" BackgroundColor="#55A8DA">
+        <DefaultTile ShowName="wideLogoOnly" ShortName="Itinerary Hunter" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen-620x300.png" BackgroundColor="#55A8DA" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

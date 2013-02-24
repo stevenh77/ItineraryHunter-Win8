@@ -1,0 +1,41 @@
+﻿<infrastructure:MvvmAppBase
+    x:Class="Kona.AWShopper.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:Kona.AWShopper.Converters" 
+    xmlns:infrastructure="using:Kona.Infrastructure"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <!-- 
+                    Styles that define common aspects of the platform look and feel
+                    Required by Visual Studio project and item templates
+                 -->
+                <ResourceDictionary Source="Common/StandardStyles.xaml" />
+                <ResourceDictionary Source="Themes/Generic.xaml" />
+                <ResourceDictionary Source="Themes/LightThemedStyles.xaml" />
+                <ResourceDictionary Source="Themes/DataTemplates.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="WorldAppBarButtonStyle" TargetType="ButtonBase" BasedOn="{StaticResource AppBarButtonStyle}">
+                <Setter Property="AutomationProperties.AutomationId" Value="WorldAppBarButton"/>
+                <Setter Property="AutomationProperties.Name" Value="World"/>
+                <Setter Property="Content" Value="&#xE128;"/>
+            </Style>
+
+            <!-- Converters -->
+            <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:BooleanNegationToVisibilityConverter x:Key="BooleanNegationToVisibilityConverter" />
+            <converters:NullToVisibleConverter x:Key="NullToVisibleConverter" />
+            <converters:NotNullToVisibleConverter x:Key="NotNullToVisibleConverter" />
+            <converters:IsGiftContentConverter x:Key="IsGiftContentConverter" />
+            <converters:IsSignInInvalidConverter x:Key="IsSignInInvalidConverter" />
+            <converters:FormStatusToVisibilityConverter x:Key="FormStatusToVisibilityConverter" />
+            <converters:FormStatusToStyleConverter x:Key="FormStatusToStyleConverter" />
+            <converters:FirstErrorConverter x:Key="FirstErrorConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</infrastructure:MvvmAppBase>
